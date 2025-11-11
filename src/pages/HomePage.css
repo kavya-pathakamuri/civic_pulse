@@ -1,0 +1,213 @@
+/* Reset & root full screen */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9; /* light neutral background */
+  color: #1f2937; /* dark text */
+}
+
+/* The whole page container */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #006d5b, #008080, #004d40); /* teal gradient */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 18px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Main content area - grid layout */
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 230px 1fr 230px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+/* Left sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Left sidebar buttons */
+.nav-btn {
+  background: linear-gradient(135deg, #20c997, #008080);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #008080, #006d5b);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Center content */
+.content {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.content h3 {
+  color: #008080; /* teal heading */
+  margin-top: 0;
+}
+
+.content p,
+.content li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Right sidebar */
+.ads {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.ads h4 {
+  margin-bottom: 12px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Right sidebar buttons */
+.ad-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #004d40;
+  border: none;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.ad-btn:hover {
+  background: linear-gradient(135deg, #38f9d7, #20c997);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  background-color: #006d5b;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.footer-links a {
+  color: #b2f5ea;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.footer-copy {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* User details on top right (header) */
+.header .user-info {
+  float: right;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Logout button in header */
+.header .user-info button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* Logout button in sidebar */
+.sidebar .logout-btn {
+  margin-top: 10px;
+  background-color: #e74c3c; /* red */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 90%;
+  text-align: left;
+}
+
+.sidebar .logout-btn:hover {
+  background-color: #c0392b; /* darker red */
+}
+.ads-logout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px; /* spacing from main content */
+}
+
+.logout-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* match ad buttons width */
+}
+
+.logout-btn:hover {
+  background-color: #d9363e;
+}

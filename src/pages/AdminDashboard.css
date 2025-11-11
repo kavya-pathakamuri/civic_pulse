@@ -1,0 +1,706 @@
+/* 🌆 Main Layout */
+.admin-dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🧭 Dashboard Card */
+.admin-dashboard-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-dashboard-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+/* 📊 Filter Button Section */
+.admin-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+/* 🎨 Buttons */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn.total {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+.btn.pending {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+}
+.btn.resolved {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.btn.active {
+  outline: 3px solid rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
+}
+
+/* 📋 Table Section */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table th {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #2f3640;
+  font-size: 0.95rem;
+}
+
+/* 🦓 Alternate Row Colors */
+.admin-table tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.admin-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* 🟢 Status-based Row Tints */
+.admin-table tr.pending-row {
+  background-color: #fff7e8;
+}
+
+.admin-table tr.resolved-row {
+  background-color: #e9f8ef;
+}
+
+/* 🏷 Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  min-width: 90px;
+}
+
+.status-badge.pending {
+  background: #ffe1b3;
+  color: #c97a00;
+}
+
+.status-badge.resolved {
+  background: #d2f8d2;
+  color: #1e8449;
+}
+
+/* 🔽 Dropdown */
+.status-dropdown {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+
+.status-dropdown:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* 🚫 No Data Text */
+.no-data {
+  text-align: center;
+  margin-top: 30px;
+  color: #7f8c8d;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .admin-dashboard-card {
+    padding: 25px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .admin-dashboard-title {
+    font-size: 1.6rem;
+  }
+}
+/* 🪟 Popup Modal */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 380px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popup-card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.popup-card label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.popup-card select,
+.popup-card input,
+.popup-card textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.save-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.assign-btn {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.assign-btn:hover {
+  transform: scale(1.05);
+}
+/* Alternate row shading */
+.even-row {
+  background-color: #f9fbfc;
+}
+
+.odd-row {
+  background-color: #ffffff;
+}
+
+/* Table styling for extra columns */
+.admin-table th,
+.admin-table td {
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* Popup and buttons — already from previous message */
+/* ✨ Different color for Reassign button */
+.reassign-btn {
+  background: linear-gradient(135deg, #0abde3, #0984e3);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.reassign-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3);
+}
+/* 🖼️ Progress photo thumbnail */
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 5px;
+  border: 2px solid #43e97b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.popup-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.photo-section {
+  margin: 15px 0;
+}
+
+.upload-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.popup-preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.track-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.track-btn:hover {
+  background: #0056b3;
+}
+
+.cancel-btn {
+  background: #888;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #666;
+}
+/* 🌆 Dashboard Table Styling */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🧾 Table Header */
+.admin-table thead {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-table th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* 📋 Table Body */
+.admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+/* 🎨 Zebra Row Colors */
+.admin-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.admin-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* 🖱️ Hover Effect */
+.admin-table tr:hover {
+  background-color: #e8f4ff;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 📦 Inputs & Dropdowns */
+.status-dropdown,
+.remarks-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.status-dropdown:focus,
+.remarks-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* 🔘 Buttons */
+.save-btn,
+.track-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn {
+  background: #28a745;
+}
+
+.save-btn:hover {
+  background: #1f883d;
+}
+
+.track-btn {
+  background: #007bff;
+}
+
+.track-btn:hover {
+  background: #0056b3;
+}
+
+/* 📱 Responsive Table */
+@media (max-width: 900px) {
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table tr {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .admin-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #555;
+  }
+}
+/* 🌟 Popup Overlay (Background Blur Effect) */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🪟 Popup Container */
+.popup-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 480px;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.35s ease-out;
+  position: relative;
+}
+
+/* 💬 Popup Header */
+.popup-card h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 🧾 Form Inputs */
+.popup-card label {
+  display: block;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #333;
+}
+
+.popup-card input,
+.popup-card select,
+.popup-card textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  transition: 0.2s;
+  background-color: #fafafa;
+}
+
+.popup-card input:focus,
+.popup-card textarea:focus,
+.popup-card select:focus {
+  border-color: #3f51b5;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1);
+}
+
+/* 🖼️ Image Preview */
+.popup-preview {
+  display: block;
+  margin: 15px auto;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* 🎯 Popup Actions */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  color: #fff;
+}
+
+.cancel-btn {
+  background: linear-gradient(90deg, #f44336, #c62828);
+  color: #fff;
+}
+
+.save-btn:hover,
+.cancel-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .popup-card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .popup-card h3 {
+    font-size: 1.2rem;
+  }
+}
+.assign-btn.disabled-btn {
+  background-color: #9ca3af; /* gray */
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.assign-btn.reassign-btn {
+  background-color: #ef4444; /* red for low rating */
+  color: #fff;
+}

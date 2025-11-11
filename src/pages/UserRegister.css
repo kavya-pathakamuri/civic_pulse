@@ -1,0 +1,121 @@
+/* 🌿 Full-screen background */
+.form-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #66cdaa; /* matches landing page background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 📦 Registration Card */
+.card {
+  background-color: #008080; /* teal */
+  padding: 40px 50px;
+  border-radius: 18px;
+  width: 400px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease;
+  text-align: center;
+}
+
+/* 🏷️ Title */
+.card h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+/* 📝 Input fields */
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000; /* black text for input */
+  font-size: 15px;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #555555; /* dark placeholder */
+}
+
+.input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  transform: scale(1.02);
+}
+
+/* 🚀 Submit Button */
+.submit {
+  width: 100%;
+  background: linear-gradient(135deg, #38f9d7, #43e97b);
+  color: #003333;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  filter: brightness(1.1);
+}
+
+/* 💬 Message (success/error) */
+.message {
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Error messages */
+.message.error {
+  color: #b91c1c; /* dark red for errors */
+}
+
+/* Success messages */
+.message.success {
+  color: #15803d; /* dark green for success */
+}
+
+/* 🔗 Login Link */
+.link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #b2f5ea;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* ✨ Entrance animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

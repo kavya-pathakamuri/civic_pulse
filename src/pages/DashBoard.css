@@ -1,0 +1,841 @@
+/* DashBoard.css */
+
+/* 🌆 Overall layout */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  padding: 50px;
+}
+
+/* 🏠 Dashboard landing view */
+.dashboard-buttons {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 60px 90px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dashboard-buttons:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-buttons h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 40px;
+}
+
+.dashboard-btn {
+  display: inline-block;
+  margin: 15px;
+  padding: 16px 45px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button colors */
+.dashboard-btn:first-of-type {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.dashboard-btn:last-of-type {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+}
+
+.dashboard-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 📝 Complaint form */
+.complaint-form-container {
+  width: 90%;
+  max-width: 650px;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  color: #333;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+.complaint-form-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.complaint-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.complaint-form input,
+.complaint-form select,
+.complaint-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.complaint-form input:focus,
+.complaint-form select:focus,
+.complaint-form textarea:focus {
+  border-color: #0072ff;
+  box-shadow: 0 0 5px rgba(0, 114, 255, 0.4);
+}
+
+/* File preview */
+.preview {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.preview-img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 2px solid #0072ff;
+}
+
+/* Form buttons */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.submit-btn,
+.cancel-btn {
+  flex: 1;
+  margin: 5px;
+  padding: 12px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #000;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #ff5858, #f09819);
+  color: #fff;
+}
+
+.submit-btn:hover,
+.cancel-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Success message */
+.success-container {
+  background: #ffffff;
+  padding: 50px 70px;
+  border-radius: 20px;
+  text-align: center;
+  color: #2c3e50;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.5s ease;
+}
+
+.success-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #27ae60;
+}
+
+.grievance-id {
+  background: #0072ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 15px 0;
+}
+
+/* 🔍 Track Complaint */
+.track-container {
+  width: 90%;
+  max-width: 650px;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  color: #333;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.track-container h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.track-form label {
+  font-weight: 600;
+}
+
+.track-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.track-form input:focus {
+  border-color: #7f00ff;
+}
+
+.track-btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.track-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+.result-table-container {
+  margin-top: 25px;
+  overflow-x: auto;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+  border-radius: 10px;
+  color: #333;
+}
+
+.result-table th,
+.result-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.result-table th {
+  background: linear-gradient(135deg, #dceefb, #a1c4fd);
+  color: #333;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status-badge.pending {
+  background: #f1c40f;
+  color: #000;
+}
+
+.status-badge.resolved {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.no-result {
+  margin-top: 20px;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dashboard-heading {
+  text-align: center;
+  font-size: 28px;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.dashboard-quote {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dashboard-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
+  text-align: center;
+}
+
+.dashboard-btn:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.btn-info {
+  font-size: 14px;
+  color: #f3f4f6;
+  margin-top: 8px;
+}
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d0e8f2, #f9f9f9);
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-container-inner {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 600px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  color: #1d4ed8;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.dashboard-quote {
+  font-size: 16px;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-btn {
+  background-color: #1d4ed8;
+  color: white;
+  font-size: 18px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.btn-subtext {
+  font-size: 13px;
+  color: #e0e7ff;
+  margin-top: 5px;
+}
+/* Full-page layout */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Centers the dashboard card */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Inner content card */
+.dashboard-container-inner {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.dashboard-title {
+  font-size: 30px;
+  color: #1e3a8a;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Quote below heading */
+.dashboard-quote {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 25px;
+}
+
+/* Buttons section */
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Stylish buttons */
+.dashboard-btn {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  color: white;
+  font-size: 18px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-btn:hover {
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-subtext {
+  font-size: 13px;
+  color: #c7d2fe;
+  margin-top: 4px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🌈 Overlay Background */
+.feedback-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🪟 White Feedback Container */
+.feedback-popup {
+  background: #ffffff; /* solid white */
+  border-radius: 14px;
+  padding: 35px 40px;
+  width: 480px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🏷️ Header */
+.feedback-popup h2 {
+  text-align: center;
+  color: #0d3b66;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #007bff40;
+  padding-bottom: 10px;
+}
+
+/* ✍️ Input Fields */
+.feedback-popup input[type="text"],
+.feedback-popup textarea,
+.feedback-popup select {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.feedback-popup input:focus,
+.feedback-popup textarea:focus,
+.feedback-popup select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+}
+
+/* ⭐ Rating Stars */
+.feedback-stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.feedback-star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.feedback-star.active {
+  color: #f8c10c;
+  transform: scale(1.1);
+}
+
+/* 🖼️ Image Preview */
+.feedback-image-preview {
+  width: 100%;
+  height: 180px;
+  margin-top: 12px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎯 Buttons Container */
+.feedback-popup .popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 14px;
+}
+
+/* ✅ Submit Button */
+.feedback-submit-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feedback-submit-btn:hover {
+  background: linear-gradient(135deg, #3399ff, #0066cc);
+  transform: translateY(-2px);
+}
+
+/* ❌ Cancel Button */
+.feedback-cancel-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feedback-cancel-btn:hover {
+  background: linear-gradient(135deg, #e35d6a, #b02a37);
+  transform: translateY(-2px);
+}
+
+/* 🎞️ Smooth Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+/* 🌟 Feedback Button (Visible when complaint is resolved) */
+.feedback-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+  margin-top: 20px;
+}
+
+.feedback-btn:hover {
+  background: linear-gradient(135deg, #3399ff, #004d99);
+  transform: translateY(-3px);
+}
+
+/* 🌈 Overlay Background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 240, 240, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🪟 Feedback Popup Container */
+.feedback-popup-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 480px;
+  max-width: 95%;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e0e0e0;
+  animation: slideUp 0.4s ease-out;
+}
+
+.feedback-popup-card h3 {
+  font-size: 22px;
+  color: #222;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.feedback-popup-card p {
+  text-align: center;
+  color: #444;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+/* ⭐ Star Rating Section */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.star {
+  font-size: 32px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.star:hover,
+.star.filled {
+  color: #ffbf00;
+  transform: scale(1.15);
+  text-shadow: 0 0 8px rgba(255, 191, 0, 0.6);
+}
+
+/* 📝 Feedback Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: 0.3s;
+}
+
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  background-color: #fff;
+}
+
+/* 🖼️ Image Preview */
+.upload-label {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.feedback-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 🎯 Action Buttons */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(40, 167, 69, 0.4);
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #34ce57, #218838);
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(220, 53, 69, 0.4);
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #e35d6a, #b02a37);
+  transform: translateY(-2px);
+}
+
+/* 🎞️ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
